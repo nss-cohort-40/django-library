@@ -1,0 +1,18 @@
+[
+  {
+    "model": "libraryapp.library",
+    "pk": 1,
+    "fields": {
+      "title": "Main Branch",
+      "address": "123 Sesame St"
+    }
+  },
+  {
+    "model": "libraryapp.library",
+    "pk": 2,
+    "fields": {
+      "title": "East Branch",
+      "address": "456 Electric Avenue"
+    }
+  }
+]

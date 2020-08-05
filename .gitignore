@@ -1,0 +1,3 @@
+.vscode
+libraryapp/views/connection.py
+*.pyc

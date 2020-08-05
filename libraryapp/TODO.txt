@@ -1,0 +1,22 @@
+Let's make some Books show up in the Browser
+
+1  Create a Book class -- which in Django is a Model
+      1a Add it to the __init__.py
+2  Create a new migration -- instrux for building table in the db
+3  Migrate -- tell Django to build the Book table
+3a  Put some book data in the db -- Do with a cool tool called a fixture!
+4  Create a URL configuration for it in urls.py -- set up a pattern matching for which request handler ( view function ) to call when the request is for /books
+5  Create a view for listing books -- this will fetch the book data from db, bind it to a template and send the HTML in a response to the browser
+6  Create a template for a list of books
+
+
+Let's create some related data for Books/Libraries/Librarians(users)
+
+1 Make a Librarian model
+  add it to the __init__.py
+  makemigrations
+  migrate
+2 Make a Librarian be created when a User is created
+3 Update Book model to contain foreign keys of Library and Librarian
+4 Make new migration
+5 Migrate

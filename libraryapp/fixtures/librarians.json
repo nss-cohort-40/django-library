@@ -1,0 +1,10 @@
+[
+  {
+    "model": "libraryapp.librarian",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "location": 1
+    }
+  }
+]

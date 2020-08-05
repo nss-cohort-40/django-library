@@ -1,0 +1,62 @@
+[
+  {
+    "model": "libraryapp.book",
+    "pk": 1,
+    "fields": {
+      "title": "Taiko",
+      "isbn":  4275747474873,
+      "author":  "Eiji Yoshikawa",
+      "year_published": 2001,
+      "location_id": 1,
+      "librarian_id": 1
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 2,
+    "fields": {
+      "title": "Lamb",
+      "isbn":  59359409490,
+      "author":  "Christopher Moore",
+      "year_published": 2004,
+      "location_id": 1,
+      "librarian_id": 1
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 3,
+    "fields": {
+      "title": "The Golem and the Jinni",
+      "isbn": 8592475822,
+      "author": "Helene Wecker",
+      "year_published": 2013,
+      "location_id": 1,
+      "librarian_id": 1
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 4,
+    "fields": {
+      "title": "Cooking With Concrete",
+      "isbn": 4375847474873,
+      "author": "Randy Rouge",
+      "year_published": 1999,
+      "location_id": 1,
+      "librarian_id": 1
+    }
+  },
+  {
+    "model": "libraryapp.book",
+    "pk": 5,
+    "fields": {
+      "title": "Take the Pinheads Bowling",
+      "isbn": 42755467474873,
+      "author": "Darby Funderbunk",
+      "year_published": 1982,
+      "location_id": 1,
+      "librarian_id": 1
+    }
+  }
+]
