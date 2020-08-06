@@ -1,3 +1,4 @@
 .vscode
 libraryapp/views/connection.py
 *.pyc
+library.session.sql
