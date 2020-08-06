@@ -10,4 +10,6 @@ urlpatterns = [
     path('libraries/', library_list, name='locations'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', logout_user, name='logout'),
+    path('books/<int:book_id>/', book_details, name='book'),
+    path('books/<int:book_id>/form/', book_edit_form, name='book_edit_form'),
 ]
