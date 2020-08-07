@@ -20,3 +20,11 @@ Let's create some related data for Books/Libraries/Librarians(users)
 3 Update Book model to contain foreign keys of Library and Librarian
 4 Make new migration
 5 Migrate
+
+
+
+Add Registration
+1 Form
+  1 view
+  1 template
+  1 url path

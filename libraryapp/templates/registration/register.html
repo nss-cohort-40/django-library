@@ -1,0 +1,38 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>Register</h1>
+
+    <form action="{% url 'libraryapp:register' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <label for="username">Username: </label>
+            <input id="username" type="text" name="username" >
+        </fieldset>
+
+        <fieldset>
+            <label for="first_name">First name: </label>
+            <input id="first_name" type="text" name="first_name" \>
+        </fieldset>
+
+        <fieldset>
+            <label for="last_name">Last name: </label>
+            <input id="last_name" type="text" name="last_name" >
+        </fieldset>
+
+
+        <fieldset>
+            <label for="email">Email: </label>
+            <input id="email" type="text" name="email">
+        </fieldset>
+
+        <fieldset>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password" >
+        </fieldset>
+
+        <input type="submit" value="Register" />
+
+    </form>
+
+{% endblock %}

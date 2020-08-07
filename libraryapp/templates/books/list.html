@@ -1,20 +1,23 @@
+{% extends 'shared/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Our Books</title>
-  </head>
-  <body>
-    <h1>Our Books</h1>
 
-    <ol>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <h1>Books</h1>
+
+    <a href="{% url 'libraryapp:book_form' %}">Add Book to Inventory</a>
+
+    <ol class="books">
     {% for book in all_books %}
-      <li>
-        <a href="{% url 'libraryapp:book' book.id %}"> {{ book.title }} </a>
-          by {{book.author}} published in {{book.year_published}}
-      </li>
+        <li class="book">
+            <a class="book__title" href="{% url 'libraryapp:book' book.id %}"> {{ book.title }}</a>
+            <div class="book__description">
+                by {{book.author}} published in {{book.year_published}}
+            </div>
+        </li>
     {% endfor %}
     </ol>
-  </body>
-</html>
+{% endblock %}

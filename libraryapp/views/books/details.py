@@ -8,6 +8,7 @@ from ..connection import Connection
 from ..helpers.get_book import get_book
 
 
+
 @login_required
 def book_details(request, book_id):
     if request.method == 'GET':
