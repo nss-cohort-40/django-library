@@ -7,11 +7,13 @@
     <ol>
     {% for library in all_libraries %}
         <li>
-
             {{ library.title }}
             ({{ library.address }})
             <ul>
-            {% for book in library.books %}
+            {% comment %}
+              book_set.all is how we "reverse lookup" the books that belong to a library. Behaves much like _embed from json-server
+            {% endcomment %}
+            {% for book in library.book_set.all %}
                 <li>{{ book.title }}</li>
             {% endfor %}
             </ul>

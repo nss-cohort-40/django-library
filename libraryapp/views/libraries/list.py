@@ -28,50 +28,52 @@ def create_library(cursor, row):
     return (library, book,)
 
 def library_list(request):
-    with sqlite3.connect("/Users/joeshep/workspace/python/C40_livecodes/django-library/library/db.sqlite3") as conn:
-        conn.row_factory = create_library
-        db_cursor = conn.cursor()
+    # with sqlite3.connect("/Users/joeshep/workspace/python/C40_livecodes/django-library/library/db.sqlite3") as conn:
+    #     conn.row_factory = create_library
+    #     db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-          SELECT
-            li.id library_id,
-            li.title,
-            li.address,
-            b.id book_id,
-            b.title book_title,
-            b.author,
-            b.year_published,
-            b.isbn
-          FROM libraryapp_library li
-          JOIN libraryapp_book b ON li.id = b.location_id
-          ;
-        """)
+    #     db_cursor.execute("""
+    #       SELECT
+    #         li.id library_id,
+    #         li.title,
+    #         li.address,
+    #         b.id book_id,
+    #         b.title book_title,
+    #         b.author,
+    #         b.year_published,
+    #         b.isbn
+    #       FROM libraryapp_library li
+    #       JOIN libraryapp_book b ON li.id = b.location_id
+    #       ;
+    #     """)
 
-        # list of tuples
-        libraries = db_cursor.fetchall()
+    #     # list of tuples
+    #     libraries = db_cursor.fetchall()
 
-        # Start with an empty dictionary
-        library_groups = {}
+    #     # Start with an empty dictionary
+    #     library_groups = {}
 
-        # Iterate the list of tuples
-        for (library, book) in libraries:
+    #     # Iterate the list of tuples
+    #     for (library, book) in libraries:
 
-            # If the dictionary does have a key of the current
-            # library's `id` value, add the key and set the value
-            # to the current library
-            if library.id not in library_groups:
-                library_groups[library.id] = library
-                library_groups[library.id].books.append(book)
+    #         # If the dictionary does have a key of the current
+    #         # library's `id` value, add the key and set the value
+    #         # to the current library
+    #         if library.id not in library_groups:
+    #             library_groups[library.id] = library
+    #             library_groups[library.id].books.append(book)
 
-            # If the key does exist, just append the current
-            # book to the list of books for the current library
-            else:
-                library_groups[library.id].books.append(book)
+    #         # If the key does exist, just append the current
+    #         # book to the list of books for the current library
+    #         else:
+    #             library_groups[library.id].books.append(book)
 
+    library_list = Library.objects.all()
     template_name = 'libraries/list.html'
 
+    # library_groups.values()
     context = {
-        'all_libraries': library_groups.values()
+        'all_libraries': library_list
     }
 
     return render(request, template_name, context)
