@@ -78,14 +78,14 @@ def book_list(request):
         new_book.save()
 
         # or...use the create() shorthand to make the instance and save it at the same time
-        # new_book = Book.objects.create(
-        #     title = form_data['title'],
-        #     author = form_data['author'],
-        #     isbn = form_data['isbn'],
-        #     year = form_data['year_published'],
-        #     location_id = request.user.librarian.id,
-        #     librarian_id = form_data["location"]
-        # )
+        new_book = Book.objects.create(
+            title = form_data['title'],
+            author = form_data['author'],
+            isbn = form_data['isbn'],
+            year = form_data['year_published'],
+            location_id = request.user.librarian.id,
+            librarian_id = form_data["location"]
+        )
 
 
         return redirect(reverse('libraryapp:books'))
